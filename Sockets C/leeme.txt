@@ -1,0 +1,45 @@
+Instrucciones para ejecuci—n del ejemplo servidor/cliente
+
+En los archivos adjuntos hay un programa Servidor y un Cliente.
+lo que hacen es  establecer conexion entre ellos y pasarse las
+cadenas de texto "hola" y "adios". Sirve como ejemplo basico de como
+conectar servidor y cliente y de como transmitir datos del uno al otro.
+
+Para ejecutar los programas en entorno linux o Mac , hay que seguir los 
+siguientes pasos:
+
+
+1. Con permiso de root editar el fichero /etc/services y añadir una linea,
+del mismo estilo de las que ya hay, pero debemos agregar esta:
+
+  cpp_java    tcp/15557
+
+  en Mac , usa el Finder, y el menu ir , y busca la carpeta private/etc
+  y en archivo services agregas
+  cpp_java   15557/tcp
+
+
+  siendo 15557 cualquier numero que no exista ya en el archivo y que sea
+ entre 5000 y 65635.
+
+2. Buscar el archivo  etc/hosts, Asegurarse que en el archivo /etc/hosts hay una linea en la que aparece 
+el nombre "localhost" y la direccion IP 127.0.0.1. Normalmente asi sera.
+
+3. Copiar todos los archivos en un directorio de linux o de Linux o de Mac
+
+4. En el directorio donde hemos copiado los archivos, hacer 
+
+$ make
+
+Se generara un Servidor y un Cliente
+
+Desde una ventana, arrancar el Servidor
+
+$ ./Servidor
+
+Desde otra, arrancar el Cliente
+
+$ ./Cliente
+
+Veremos como cada programa escribe en pantalla la cadena que recibe del
+otro.
