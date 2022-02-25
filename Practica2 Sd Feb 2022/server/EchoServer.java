@@ -4,7 +4,7 @@ import java.net.*;
 import java.io.*;
 public class EchoServer {
 	// Objeto remoto ( es el Stub del servidor, conocido como Skeleton)
-    private static EchoObject eo = new EchoObject();
+    private static EchoObjectSkeleton eo = new EchoObjectSkeleton();
 
     private static String myURL="localhost";
     private static ServerSocket serverSocket =null;

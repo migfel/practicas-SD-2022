@@ -4,7 +4,7 @@ import java.net.*;
 import java.io.*;
 /*
 public class EchoMultiServerThread extends Thread{
-    private static EchoObject eo = new EchoObject();
+    private static EchoObjectInterface eo = new EchoObjectInterface();
     private Socket clientSocket = null;
     private String myURL = "localhost";
     private BufferedReader is = null;
@@ -47,7 +47,7 @@ public class EchoMultiServerThread extends Thread{
 }
 */
 public class EchoMultiServerThread implements Runnable{
-    private static EchoObject eo = new EchoObject();
+    private static EchoObjectSkeleton eo = new EchoObjectSkeleton();
     private Socket clientSocket = null;
     private String myURL = "localhost";
     private BufferedReader is = null;

@@ -4,8 +4,8 @@ import java.net.*;
 import java.io.*;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import rmi.EchoInt;
-public class EchoObjectStub implements EchoInt{
+import rmi.EchoInterface;
+public class EchoObjectStub implements EchoInterface{
     private Socket echoSocket = null;
     private PrintWriter os = null;
     private BufferedReader is = null;
