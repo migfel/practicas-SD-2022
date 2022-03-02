@@ -5,7 +5,6 @@ import java.io.*;
 public class EchoServer {
 	// Objeto remoto ( es el Stub del servidor, conocido como Skeleton)
     private static EchoObjectSkeleton eo = new EchoObjectSkeleton();
-
     private static String myURL="localhost";
     private static ServerSocket serverSocket =null;
     private static Socket clientSocket = null;
@@ -35,9 +34,9 @@ public class EchoServer {
             while(listening) // bucle infinito
             {
                 clientSocket = serverSocket.accept();// aceptamos conexion de un client
-                // leemos del socket
+                // preparamos para leer  del socket
                 is = new BufferedReader( new InputStreamReader(clientSocket.getInputStream()));
-                //escribimos en el socket
+                //preparamos para escribir en el socket
                 os = new PrintWriter(clientSocket.getOutputStream());
                 // revisamos que en el socket el cliente ha enviado algun texto
                 while ((inputline = is.readLine()) != null) 
