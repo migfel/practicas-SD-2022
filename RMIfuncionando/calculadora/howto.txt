@@ -1,0 +1,11 @@
+# Compilar
+javac *.java
+# Crear stubs. Esta linea ya no es necesaria porque en el servidor
+# se cambio la clase RMISecurityManager a SecurityManager
+# rmic CalculadoraObj
+
+# Iniciar servidor
+rmiregistry &
+java -Djava.security.policy=server.policy CalculadoraServer
+# Iniciar cliente
+java -Djava.security.policy=client.policy CalculadoraClient

@@ -1,0 +1,16 @@
+# https://docs.oracle.com/javase/tutorial/rmi/compiling.html
+
+# Compilar interfaz y crear .jar para distribuir
+cd compute
+javac Compute.java Task.java
+jar cvf compute.jar *.class
+# Compilar clases del servidor
+javac -cp .:compute/compute.jar engine/ComputeEngine.java
+# Compilar clases del cliente
+javac -cp .:compute/compute.jar client/ComputePi.java client/Pi.java
+
+# Iniciar servidor desde el directorio principal
+rmiregistry &
+java -cp .:compute/compute.jar -Djava.rmi.server.codebase=file:compute/compute.jar -Djava.rmi.server.hostname=localhost -Djava.security.policy=server.policy engine.ComputeEngine
+# Iniciar Cliente desde el directorio principal
+java -cp .:compute/compute.jar -Djava.rmi.server.codebase=file:. -Djava.security.policy=client.policy client.ComputePi localhost 45

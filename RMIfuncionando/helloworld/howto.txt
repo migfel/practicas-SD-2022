@@ -1,0 +1,20 @@
+Documento base de este ejercicio
+http://docs.oracle.com/javase/7/docs/technotes/guides/rmi/hello/hello-world.html
+Para este ejercicio 1 de la practica 5 que es el hola mundo, abiertos tres terminales, 
+puedes ver las imágenes de referencia y el código fuente que esta en el archivo ZIP: RMIfuncionando.zip
+
+
+
+
+Paso 1.- Abrir en una terminal y ejecutar la siguiente linea ( como resultado solo veras el puerto en el que esta ejecutándose el rmiregistry)
+rmiregistry &
+
+
+Paso 2 .- Ahora abre otra terminal para que ejecutes el Servidor y ahi teclea:
+
+java -classpath . -Djava.rmi.server.codebase=file:./ Server &
+
+Paso 3.- Abrir en otra ventana de la terminal que sera el cliente y ejecutar lo siguiente:
+java  -classpath . Client
+
+Terminamos
