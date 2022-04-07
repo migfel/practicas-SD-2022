@@ -13,9 +13,9 @@ public class Client {
         try {
             Hello stub = (Hello)java.rmi.Naming.lookup("//" +java.net.InetAddress.getLocalHost().getHostAddress()+ ":1099/Hello");
             String response = stub.sayHello();
-            System.out.println("response: " + response);
+            System.out.println("respuesta: " + response);
         } catch (Exception e) {
-            System.err.println("Client exception: " + e.toString());
+            System.err.println("Excepcion del Cliente: " + e.toString());
             e.printStackTrace();
         }
     }

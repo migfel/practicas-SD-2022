@@ -9,7 +9,7 @@ public class Server implements Hello {
     public Server() {}
 
     public String sayHello() {
-        return "Hello, world!";
+        return "Hola, Mundo en sistemas distribuidos desde el Servidor, esto podria ser Amazon respondiendo un proceso de pago!";
     }
 
     public static void main(String args[]) {
@@ -18,14 +18,14 @@ public class Server implements Hello {
             Server obj = new Server();
             Hello stub = (Hello) UnicastRemoteObject.exportObject(obj, 0);
 
-            // Bind the remote object's stub in the registry
+            // Enlazar el stub del objeto remoto en el registro
+        //Naming proporciona métodos para almacenar y obtener referencias a objetos remotos en un registro de objetos remotos.
             java.rmi.Naming.rebind("//" +java.net.InetAddress.getLocalHost().getHostAddress()+ ":1099/Hello", stub);
-            //Registry registry = LocateRegistry.getRegistry();
-            //registry.bind("Hello", stub);
+       
 
-            System.err.println("Server ready");
+            System.err.println("el servidor esta listo y acepta conexiones");
         } catch (Exception e) {
-            System.err.println("Server exception: " + e.toString());
+            System.err.println("Excepcion del Servidor : " + e.toString());
             e.printStackTrace();
         }
     }
