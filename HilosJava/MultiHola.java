@@ -1,24 +1,24 @@
 // Definimos unos hilos simples. Se detendrán un momento
 // antes de imprimir sus nombres y retardos
-// considera que este archivo podria separarse en un archivo TestTh y en otro que se llame MultiHola
+// considera que este archivo podria separarse en un archivo ProbarHilo y en otro que se llame MultiHola
 // entonces es susceptible de que los podamos alojar en maquinas diferentes
 // la pregunta seria , sera codigo remoto o codigo distribuido?
 
-class TestTh extends Thread {
+class ProbarHilo extends Thread {
     private String nombre;
     private int retardo;
 
     // Constructor para almacenar nuestro nombre
-    // y el retardo
-    public TestTh( String s,int d ) {
+    // y el tiempo de retardo
+    public ProbarHilo( String s,int d ) {
         nombre = s;
         retardo = d;
         }
 
-    // El metodo run() es similar al main(), pero para
-    // threads. Cuando run() termina el thread muere , es decir termina y no se ejecuta mas
+    // El metodo run() es similar al main(), pero para threads. 
+        // Cuando run() termina el thread muere , es decir termina y no se ejecuta mas
     public void run() {
-        // Retasamos la ejecución el tiempo especificado
+        // Retrasamos la ejecución el tiempo especificado
         try {
             sleep( retardo );
         } catch( InterruptedException e ) {
@@ -32,12 +32,14 @@ class TestTh extends Thread {
 
 public class MultiHola {
     public static void main( String args[] ) {
-        TestTh t1,t2,t3;
+      
+      // definimos 3 hilos 
+        ProbarHilo t1,t2,t3;
 
-        // Creamos los threads
-        t1 = new TestTh( "Hilo 1",(int)(Math.random()*2000) );
-        t2 = new TestTh( "Hilo  2",(int)(Math.random()*2000) );
-        t3 = new TestTh( "Hilo 3",(int)(Math.random()*2000) );
+        // Creamos los threads y en el constructor indicamos el tiempo de retardo de forma aleatoria 
+        t1 = new ProbarHilo( "Hilo 1",(int)(Math.random()*2000) );
+        t2 = new ProbarHilo( "Hilo  2",(int)(Math.random()*2000) );
+        t3 = new ProbarHilo( "Hilo 3",(int)(Math.random()*2000) );
 
         // Arrancamos los threads
         t1.start();
@@ -45,4 +47,3 @@ public class MultiHola {
         t3.start();
         }
     }
-
