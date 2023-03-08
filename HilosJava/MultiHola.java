@@ -13,7 +13,7 @@ class TestTh extends Thread {
         }
 
     // El metodo run() es similar al main(), pero para
-    // threads. Cuando run() termina el thread muere
+    // threads. Cuando run() termina el thread muere , es decir termina y no se ejecuta mas
     public void run() {
         // Retasamos la ejecución el tiempo especificado
         try {
@@ -32,9 +32,9 @@ public class MultiHola {
         TestTh t1,t2,t3;
 
         // Creamos los threads
-        t1 = new TestTh( "Thread 1",(int)(Math.random()*2000) );
-        t2 = new TestTh( "Thread 2",(int)(Math.random()*2000) );
-        t3 = new TestTh( "Thread 3",(int)(Math.random()*2000) );
+        t1 = new TestTh( "Hilo 1",(int)(Math.random()*2000) );
+        t2 = new TestTh( "Hilo  2",(int)(Math.random()*2000) );
+        t3 = new TestTh( "Hilo 3",(int)(Math.random()*2000) );
 
         // Arrancamos los threads
         t1.start();
