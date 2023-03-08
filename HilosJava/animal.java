@@ -1,5 +1,5 @@
 
-/**
+/** muy importante recuerden que aquino hay main, porque este es un hilo que alguien mas debe mandar ejecutar 
 */
 public class animal extends Thread {
     String nombre;
