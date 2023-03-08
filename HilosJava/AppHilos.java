@@ -6,7 +6,7 @@
 public class AppHilos {
 
     /**
-     * @param args the command line arguments
+     * @los parametros de args recuerden que los recibimos de lo que escribimso en consola 
      */
     public static void main(String[] args) {
         
