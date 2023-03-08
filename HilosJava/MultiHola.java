@@ -1,5 +1,8 @@
 // Definimos unos hilos simples. Se detendrán un momento
 // antes de imprimir sus nombres y retardos
+// considera que este archivo podria separarse en un archivo TestTh y en otro que se llame MultiHola
+// entonces es susceptible de que los podamos alojar en maquinas diferentes
+// la pregunta seria , sera codigo remoto o codigo distribuido?
 
 class TestTh extends Thread {
     private String nombre;
