@@ -1,0 +1,3 @@
+hola 
+este es un ejemplo 
+para fragmentar archivos 
