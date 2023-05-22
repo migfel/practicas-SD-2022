@@ -1,6 +1,7 @@
 
-Para ejecutar la  aplicación Flask en Windows y permitirle el acceso a través del Firewall de Windows, realiza estos pasos
- desde consola en WIDNDOWS:
+Para el caso del archivo WebServiceOpenWeather es necesario ejecutar la  aplicación Flask en Windows y
+permitirle el acceso a través del Firewall de Windows, para ello hay que realizar estos pasos desde la 
+consola en WINDOWS:
 
 1.- instala Flask 
 pip install flask
