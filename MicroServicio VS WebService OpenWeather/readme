@@ -1,0 +1,29 @@
+
+Para ejecutar la  aplicación Flask en Windows y permitirle el acceso a través del Firewall de Windows, realiza estos pasos
+ desde consola en WIDNDOWS:
+
+1.- instala Flask 
+pip install flask
+
+2.-Abre una ventana de línea de comandos (CMD) en Windows.
+3.- Navega hasta el directorio donde se encuentra tu aplicación Flask.
+4.- Crea un entorno virtual (opcional pero recomendado) para tu aplicación Flask utilizando el siguiente comando:
+(un entorno virtual en python es para el  desarrollo aislado y separado del entorno global de tu sistema. 
+Cada entorno virtual tiene su propia instalación de Python y sus propias bibliotecas y dependencias)
+
+python -m venv env
+
+5.- Activa el entorno virtual con el siguiente comando:
+
+env\Scripts\activate
+
+6.- Define la variable de entorno FLASK_APP con el nombre del archivo principal de tu aplicación Flask. P
+en este caso es WebServiceOpenWeather.py
+el comando queda:
+set FLASK_APP=WebServiceOpenWeather.py
+7.- Ejecuta la aplicación Flask con el siguiente comando, el cual 
+ iniciará el servidor Flask en http://localhost:5000 de forma predeterminada:
+ flask run
+8.- Si es necesario por el bloqueo de Firewall, cambiar el puerto, esto lo puedes hacer con el comando para usar el puerto 8080 en este caso:
+
+flask run --port=8080
