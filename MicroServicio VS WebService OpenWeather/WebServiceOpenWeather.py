@@ -13,7 +13,7 @@ city = 'Mexico'  #Nombre de la Ciudad donde quieres saber la temperatura
 
 
 def get_temperatura():
-    api_key = '152b1599f3e42d9d0f559bf3cf348a2b'  # ITU API KEY  OpenWeatherMap 
+    api_key = ''  # ITU API KEY  OpenWeatherMap 
     
     url = f'http://api.openweathermap.org/data/2.5/weather?q={city}&appid={api_key}&units=metric' #Construimos la URL de la API de OpenWeatherMap 
     #utilizando la clave de la API y el nombre de la ciudad:
