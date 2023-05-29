@@ -1,0 +1,14 @@
+{
+  "cliente": "Nombre del cliente",
+  "direccion": "Dirección de entrega",
+  "productos": [
+    {
+      "nombre": "Producto 1",
+      "cantidad": 2
+    },
+    {
+      "nombre": "Producto 2",
+      "cantidad": 1
+    }
+  ]
+}
