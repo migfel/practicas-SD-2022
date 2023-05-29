@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Enviar datos JSON</title>
+</head>
+<body>
+  <h2>Formulario de envío de datos JSON</h2>
+  
+  <form id="myForm">
+    <label for="cliente">Cliente:</label>
+    <input type="text" id="cliente" required><br><br>
+    
+    <label for="direccion">Dirección de entrega:</label>
+    <input type="text" id="direccion" required><br><br>
+    
+    <label for="nombreProducto1">Nombre del producto 1:</label>
+    <input type="text" id="nombreProducto1" required>
+    <label for="cantidadProducto1">Cantidad del producto 1:</label>
+    <input type="number" id="cantidadProducto1" required><br><br>
+    
+    <label for="nombreProducto2">Nombre del producto 2:</label>
+    <input type="text" id="nombreProducto2" required>
+    <label for="cantidadProducto2">Cantidad del producto 2:</label>
+    <input type="number" id="cantidadProducto2" required><br><br>
+    
+    <button type="button" onclick="enviarDatos()">Enviar</button>
+  </form>
+  
+  <script>
+    function enviarDatos() {
+      var cliente = document.getElementById("cliente").value;
+      var direccion = document.getElementById("direccion").value;
+      var nombreProducto1 = document.getElementById("nombreProducto1").value;
+      var cantidadProducto1 = document.getElementById("cantidadProducto1").value;
+      var nombreProducto2 = document.getElementById("nombreProducto2").value;
+      var cantidadProducto2 = document.getElementById("cantidadProducto2").value;
+      
+      var jsonData = {
+        "cliente": cliente,
+        "direccion": direccion,
+        "productos": [
+          {
+            "nombre": nombreProducto1,
+            "cantidad": parseInt(cantidadProducto1)
+          },
+          {
+            "nombre": nombreProducto2,
+            "cantidad": parseInt(cantidadProducto2)
+          }
+        ]
+      };
+      
+      // Aquí puedes realizar acciones adicionales, como enviar el JSON a través de una solicitud HTTP
+      
+      console.log(jsonData); // Muestra el JSON en la consola para fines de demostración
+    }
+  </script>
+</body>
+</html>
