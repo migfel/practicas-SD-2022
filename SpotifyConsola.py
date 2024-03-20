@@ -1,12 +1,18 @@
+
+#este código configura las credenciales de autenticación de Spotify, crea un objeto Spotify, 
+#define una función para buscar canciones en Spotify 
+#y realiza una búsqueda de ejemplo de una canción con el título "Now". 
+#Si se encuentra una canción, imprime su nombre.
+
 import spotipy
-from spotipy.oauth2 import SpotifyClientCredentials
+from spotipy.oauth2 import SpotifyClientCredentials #clase sque e utiliza para autenticar las solicitudes a la API de Spotify mediante el flujo de credenciales del cliente.
 
 # Configura las credenciales de autenticación
-client_id = ''
-client_secret = ''
+client_id = '0f2dc6e535074e039f2462873de47ebd'
+client_secret = '90b6a7e8cbb64f2491211fa66a29c778'
 
 client_credentials_manager = SpotifyClientCredentials(client_id=client_id, client_secret=client_secret)
-sp = spotipy.Spotify(client_credentials_manager=client_credentials_manager)
+sp = spotipy.Spotify(client_credentials_manager=client_credentials_manager)#Se crea un objeto Spotify 
 
 def search_song(query):
     # Busca una canción
@@ -19,8 +25,9 @@ def search_song(query):
     else:
         return "No se encontraron canciones con ese nombre."
 
-if __name__ == "__main__":
+if __name__ == "__main__":#Esto verifica si el script está siendo ejecutado directamente o importado como un módulo.
+#Si es ejecutado directamente, se realizará una búsqueda de ejemplo de una canción con el título "Now" y se imprimirá el nombre de la canción encontrada.
     # Ejemplo de búsqueda
-    query = 'Happy'
+    query = 'Now'
     track_name = search_song(query)
     print("La primera canción encontrada es:", track_name)
