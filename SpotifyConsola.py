@@ -2,6 +2,12 @@
 #El código no utiliza OAuth directamente en el sentido de que no solicita acceso a la cuenta del usuario para realizar operaciones en su nombre. 
 #En su lugar, utiliza el flujo de "Credenciales del cliente" proporcionado por la API de Spotify.
 
+
+#OAuth se utiliza cuando la aplicación necesita acceder a recursos protegidos en nombre de un usuario específico.
+#Las "Credenciales del Cliente" se utilizan cuando la aplicación necesita acceder a recursos que no requieren la identidad específica de un usuario, como datos públicos o globales.
+
+
+
 #Este código funciona como sigue: 
 #configura las credenciales de autenticación de Spotify, crea un objeto Spotify, 
 #define una función para buscar canciones en Spotify 
