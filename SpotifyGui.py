@@ -4,8 +4,8 @@ import tkinter as tk
 from tkinter import messagebox
 
 # Configura las credenciales de autenticación
-client_id = '0f2dc6e535074e039f2462873de47ebd'
-client_secret = '90b6a7e8cbb64f2491211fa66a29c778'
+client_id = ''
+client_secret = ''
 
 client_credentials_manager = SpotifyClientCredentials(client_id=client_id, client_secret=client_secret)
 sp = spotipy.Spotify(client_credentials_manager=client_credentials_manager)
