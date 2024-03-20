@@ -1,5 +1,9 @@
 
-#este código configura las credenciales de autenticación de Spotify, crea un objeto Spotify, 
+#El código no utiliza OAuth directamente en el sentido de que no solicita acceso a la cuenta del usuario para realizar operaciones en su nombre. 
+#En su lugar, utiliza el flujo de "Credenciales del cliente" proporcionado por la API de Spotify.
+
+#Este código funciona como sigue: 
+#configura las credenciales de autenticación de Spotify, crea un objeto Spotify, 
 #define una función para buscar canciones en Spotify 
 #y realiza una búsqueda de ejemplo de una canción con el título "Now". 
 #Si se encuentra una canción, imprime su nombre.
