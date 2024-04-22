@@ -3,5 +3,8 @@ instalar en windows
 
 pip install grpcio grpcio-tools
 
+
+considera que solo debes tener tres archivos al principio, al compilar el archivo proto, se generan el resto de archivos, es similar a RMI 
+
 compilar el archivo proto ( en windows)
 python -m grpc_tools.protoc -I. --python_out=. --grpc_python_out=. hello_world.proto
