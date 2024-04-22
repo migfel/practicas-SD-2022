@@ -1,4 +1,7 @@
 notas
+instalar en windows
+
+pip install grpcio grpcio-tools
 
 compilar el archivo proto ( en windows)
 python -m grpc_tools.protoc -I. --python_out=. --grpc_python_out=. hello_world.proto
