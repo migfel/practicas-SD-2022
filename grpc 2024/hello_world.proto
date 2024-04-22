@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package helloworld;
+
+// Definición del mensaje de solicitud
+message HelloRequest {
+  string name = 1;
+}
+
+// Definición del mensaje de respuesta
+message HelloResponse {
+  string message = 1;
+}
+
+// Definición del servicio gRPC
+service HelloWorld {
+  // Método para saludar
+  rpc SayHello (HelloRequest) returns (HelloResponse) {}
+}
