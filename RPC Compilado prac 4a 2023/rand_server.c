@@ -6,8 +6,7 @@
 
 #include "rand.h"
 
-void *
-inicializa_random_1_svc(long *argp, struct svc_req *rqstp)
+void * inicializa_random_1_svc(long *argp, struct svc_req *rqstp)
 {
 	static char * result;
 
@@ -29,3 +28,48 @@ obtiene_siguiente_random_1_svc(void *argp, struct svc_req *rqstp)
 
 	return &result;
 }
+
+
+
+
+
+
+
+
+/*
+#include <stdlib.h>   // Para srand() y rand()
+#include <time.h>     // Para time() si queremos usarlo como semilla
+#include "rand.h"     // Cabecera generada por rpcgen
+
+// Función para inicializar el generador de números aleatorios
+void *inicializa_random_1_svc(long *argp, struct svc_req *rqstp)
+{
+    static char *result;  // Variable estática para devolver el resultado
+
+    // Usamos el valor del argumento como semilla, o time(NULL) si es 0
+    if (*argp == 0) {
+        srand(time(NULL));  // Si el argumento es 0, usamos la hora actual como semilla
+    } else {
+        srand(*argp);       // Usamos el valor pasado como semilla
+    }
+
+    result = "Generador de números aleatorios inicializado";  // Mensaje de éxito
+
+    return (void *) &result;  // Devolvemos el puntero al resultado
+}
+
+// Función para obtener el siguiente número aleatorio
+double *obtiene_siguiente_random_1_svc(void *argp, struct svc_req *rqstp)
+{
+    static double result;  // Variable estática para devolver el resultado
+
+    // Generamos un número aleatorio entre 0 y 1 dividiendo por RAND_MAX
+    result = (double) rand() / RAND_MAX;
+
+    return &result;  // Devolvemos el puntero al resultado
+}
+*/
+
+
+
+
