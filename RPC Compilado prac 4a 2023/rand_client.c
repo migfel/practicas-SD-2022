@@ -7,8 +7,7 @@
 #include "rand.h"
 
 
-void
-rand_prog_1(char *host)
+void rand_prog_1(char *host)
 {
 	CLIENT *clnt;
 	void  *result_1;
@@ -16,13 +15,13 @@ rand_prog_1(char *host)
 	double  *result_2;
 	char *obtiene_siguiente_random_1_arg;
 
-#ifndef	DEBUG
+     #ifndef	DEBUG
 	clnt = clnt_create (host, RAND_PROG, RAND_VERS, "udp");
 	if (clnt == NULL) {
 		clnt_pcreateerror (host);
 		exit (1);
-	}
-#endif	/* DEBUG */
+	                 }
+     #endif	/* DEBUG */
 
 	result_1 = inicializa_random_1(&inicializa_random_1_arg, clnt);
 	if (result_1 == (void *) NULL) {
@@ -38,8 +37,7 @@ rand_prog_1(char *host)
 }
 
 
-int
-main (int argc, char *argv[])
+int main (int argc, char *argv[])
 {
 	char *host;
 
