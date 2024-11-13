@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consulta Meteorológica</title>
+</head>
+<body>
+    <h1>Consulta Meteorológica</h1>
+    <label for="ciudad">Ciudad:</label>
+    <input type="text" id="ciudadInput" placeholder="Escribe el nombre de la ciudad">
+    <button onclick="obtenerDatosMeteorologicos()">Consultar</button>
+    <div id="resultado"></div>
+
+    <script>
+        function obtenerDatosMeteorologicos() {
+            const apiKey = "tu api "; // Reemplaza con tu API Key de OpenWeatherMap
+            const ciudad = document.getElementById("ciudadInput").value;
+            const url = `http://api.openweathermap.org/data/2.5/weather?q=${ciudad}&appid=${apiKey}`;
+
+            fetch(url)
+                .then(response => response.json())
+                .then(data => {
+                    if (data.main && data.weather) {
+                        const temperatura = (data.main.temp - 273.15).toFixed(2) + "°C";
+                        const condicionesClimaticas = data.weather[0].description;
+                        const resultado = `Temperatura: ${temperatura}<br>Condiciones Climáticas: ${condicionesClimaticas}`;
+                        document.getElementById("resultado").innerHTML = resultado;
+                    } else {
+                        document.getElementById("resultado").innerHTML = "Datos meteorológicos no disponibles.";
+                    }
+                })
+                .catch(error => {
+                    document.getElementById("resultado").innerHTML = "Error: " + error.message;
+                });
+        }
+    </script>
+</body>
+</html>
