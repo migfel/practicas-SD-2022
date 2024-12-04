@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tienda</title>
+</head>
+<body>
+    <h1>Bienvenido a la Tienda</h1>
+    <form id="compra-form">
+        <label for="producto">Selecciona un producto:</label>
+        <select id="producto" name="producto">
+            <option value="1">Laptop</option>
+            <option value="2">Smartphone</option>
+            <option value="3">Auriculares</option>
+            <option value="4">Monitor</option>
+            <option value="5">Teclado</option>
+        </select>
+        <br><br>
+        <label for="tarjeta">Número de tarjeta:</label>
+        <input type="text" id="tarjeta" name="tarjeta">
+        <br><br>
+        <button type="button" onclick="realizarCompra()">Comprar</button>
+    </form>
+    <p id="resultado"></p>
+
+    <script>
+        async function realizarCompra() {
+            const producto = document.getElementById('producto').value;
+            const tarjeta = document.getElementById('tarjeta').value;
+
+            const response = await fetch('http://localhost:5000/comprar', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ producto_id: parseInt(producto), tarjeta })
+            });
+
+            const resultado = await response.json();
+            document.getElementById('resultado').textContent = JSON.stringify(resultado);
+        }
+    </script>
+</body>
+</html>
+
